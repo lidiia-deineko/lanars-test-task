@@ -78,3 +78,8 @@
   border-radius: 8px;
   color: #ffffff;
 }
+
+
+.disable{
+  pointer-events: none
+}

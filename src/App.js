@@ -31,6 +31,8 @@ function App() {
         setTimeout(()=>{
           newArr[0].classList.add('hide')
           newArr[1].classList.add('hide')
+          newArr[0].classList.add('disable')
+          newArr[1].classList.add('disable')
         }, 500)
      
       }else{
