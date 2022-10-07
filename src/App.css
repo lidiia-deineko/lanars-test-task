@@ -1,5 +1,10 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* padding-top: 150px; */
 }
 
 .App-logo {
@@ -35,6 +40,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.title{
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  color: #000000;
 }
 
 .card-wrapper{
