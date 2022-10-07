@@ -37,12 +37,8 @@
   }
 }
 
-
-
-
 .card-wrapper{
   display: flex;
-  color: #0A0A0C;
 }
 
 .card{
@@ -60,12 +56,8 @@
   font-weight: 700;
   font-size: 24px;
   line-height: 36px;
-  color: #0A0A0C;
-}
-
-.hide{
   color: #ffffff;
-
+  
 }
 
 .clicked{
@@ -74,3 +66,15 @@
   border-radius: 8px;
 }
 
+.hide{
+
+  color: #0A0A0C;
+  border: 0.5px solid #CDCDCD;
+  border-radius: 8px;
+}
+
+.error{
+  border: 0.5px solid #CDCDCD;
+  border-radius: 8px;
+  color: #ffffff;
+}

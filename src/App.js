@@ -2,42 +2,61 @@ import logo from './logo.svg';
 import './App.css';
 import {useCallback, useEffect, useState } from "react";
 
-import ArrayUtilities from './utilities/ArrayUtilities';
+import ListCards from './components/ListCards/ListCards';
 
 function App() {
+  const [arrClickedCards, setArrClickedCards] = useState([]);
 
-  const [isClickedCard, setClickedCard] = useState(false);
-  const [firstCard, setFirstCard] = useState('');
-  const [secondCard, setSecondCard] = useState('');
-
-  const arrCards = ArrayUtilities.getTwoDimensionalArray(16, 8)
-
-  // useEffect(()=>{
-  //   const cardList = document.querySelectorAll('.card')
-  //   setTimeout(() => {
-  //     cardList.forEach(elem => elem.classList.add('hide'))
-  //   console.log(cardList)
-
-  //   }, 5000)
-  // }, [])
-
-  const clickOnCard = useCallback((event) => {
-    console.log(event.target.dataset.value)
-    event.target.classList.add('clicked')
+  useEffect(()=>{
+    const cards = document.querySelector('.container')
+    console.log(cards)
+    cards.classList.add('close')
   }, [])
 
-  
 
-  const listCardsRender = arrCards.map((elem, index) => 
-    <div className='card-wrapper' key={index}>
-      {elem.map((elem, index) => 
-        <div className='card' key={index} data-value={elem} onClick={clickOnCard}>{elem}</div>)}
-    </div>
-  )
+  
+  const clickCard = useCallback((event) => {
+    console.log(event.target)
+    event.target.classList.add('clicked')
+    const arr = []
+    const newArr = [...arrClickedCards, event.target]
+    setArrClickedCards(newArr)
+    console.log(newArr, 'newArr')
+    console.log(arrClickedCards, 'arrClickedCards')
+    
+    if(newArr.length === 2){
+      console.log('2')
+      const res = checkValus(newArr[0].dataset.value, newArr[1].dataset.value)
+      if(res){
+        setTimeout(()=>{
+          newArr[0].classList.add('hide')
+          newArr[1].classList.add('hide')
+        }, 500)
+     
+      }else{
+        setTimeout(()=>{
+          newArr[0].classList.remove('clicked')
+          newArr[1].classList.remove('clicked')
+        }, 500)
+      
+      }
+      setArrClickedCards([])
+    }
+  }, [arrClickedCards])
+
+  const checkValus = (a, b) => {
+    if(a == b){
+      return true
+    } else {
+      return false
+    }
+
+  }
+
 
   return (
     <div className="App">
-     {listCardsRender}
+      <ListCards clickOnCard={clickCard} />
     </div>
   );
 }
