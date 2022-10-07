@@ -8,17 +8,22 @@ function App() {
   const [arrClickedCards, setArrClickedCards] = useState([]);
 
   useEffect(()=>{
-    const cards = document.querySelector('.container')
-    console.log(cards)
-    cards.classList.add('close')
+    setTimeout(() => {
+      const cards = document.querySelectorAll('.card')
+      console.log(cards)
+      cards.forEach(elem => elem.classList.add('show'))
+    }, 0)
+    setTimeout(() => {
+      const cards = document.querySelectorAll('.card')
+      console.log(cards)
+      cards.forEach(elem => elem.classList.remove('show'))
+    }, 5000)
+    
   }, [])
 
-
-  
   const clickCard = useCallback((event) => {
     console.log(event.target)
     event.target.classList.add('clicked')
-    const arr = []
     const newArr = [...arrClickedCards, event.target]
     setArrClickedCards(newArr)
     console.log(newArr, 'newArr')

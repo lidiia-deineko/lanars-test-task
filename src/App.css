@@ -73,13 +73,17 @@
   border-radius: 8px;
 }
 
-.error{
+/* .error{
   border: 0.5px solid #CDCDCD;
   border-radius: 8px;
   color: #ffffff;
-}
+} */
 
 
 .disable{
   pointer-events: none
+}
+
+.show{
+  color: #0A0A0C;
 }
