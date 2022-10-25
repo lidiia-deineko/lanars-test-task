@@ -1,12 +1,15 @@
 import './App.css';
 import './media.css'
-import {useCallback, useState } from "react";
+import {useCallback, useRef, useState } from "react";
 
 import ListCards from './components/ListCards/ListCards';
 import { checkValues } from './utilities/HelperUtilities';
 
 function App() {
   const [arrClickedCards, setArrClickedCards] = useState([]);
+  const [counter, setCounter] = useState(0);
+
+  const finish = useRef();
 
   const clickCard = useCallback((event) => {
     const target = event.target;
@@ -28,6 +31,10 @@ function App() {
       setTimeout(()=>{
         newArr[0].classList.add('show', 'disable');
         newArr[1].classList.add('show', 'disable');
+        setCounter(counter+1);
+        if(counter === 15){
+          finish.current.classList.add('finish')
+        }
       }, 500);
    
     }else{
@@ -39,12 +46,16 @@ function App() {
     }
     setArrClickedCards([]);
     
+    
   }, [arrClickedCards]);
 
   return (
     <div className="App">
       <h2 className='title'>Mahjong</h2>
       <ListCards clickOnCard={clickCard} />
+      <div className='game-end_wrap' ref={finish}>
+        <div className='game-end' >You won!</div>
+      </div>
     </div>
   );
 }

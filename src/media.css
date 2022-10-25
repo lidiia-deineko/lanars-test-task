@@ -6,7 +6,13 @@
     .card{
         width: 60px;
         height: 84px;
-      }
+    }
+
+    .game-end{
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -35%);
+    }
       
 }
 
@@ -15,8 +21,14 @@
     .card{
         width: 50px;
         height: 74px;
-      }
-        
+    }
+
+    .game-end{
+        top: 33%;
+        left: 50%;
+        transform: translate(-50%, -33%);
+    }
+    
 }
 
 @media (max-width: 600px){
@@ -28,7 +40,13 @@
         width: 40px;
         height: 64px;
         font-size: 22px;
-      }
+    }
+
+    .game-end{
+        top: 30%;
+        left: 50%;
+        transform: translate(-55%, -30%);
+    }
       
 }
 
@@ -46,9 +64,15 @@
     .card-value{
         top: 20%;
     }
+
+    .game-end{
+        top: 27%;
+        left: 50%;
+        transform: translate(-50%, -27%);
+        font-size: 36px;
+    }
       
 }
-
 
 @media (max-width: 450px){
 
@@ -64,6 +88,38 @@
 
     .card-value{
         top: 20%;
+    }
+
+    .game-end{
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        font-size: 36px;
+    }
+      
+}
+
+@media (max-width: 350px){
+
+    .title{
+        font-size: 26px;
+      }
+    .card{
+        width: 25px;
+        height: 54px;
+        font-size: 16px;
+        margin: 6px;
+      }
+
+    .card-value{
+        top: 20%;
+    }
+
+    .game-end{
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -25%);
+        font-size: 36px;
     }
       
 }

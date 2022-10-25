@@ -57,6 +57,7 @@
 
 .container{
   color:  #0A0A0C;
+  
 }
 
 .card{
@@ -102,3 +103,27 @@
   border: 0.5px solid #CDCDCD;
 }
 
+.game-end_wrap{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.game-end{
+  position: absolute;
+  color: #b5101d;
+  font-size: 46px;
+  font-weight: 600;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  
+}
+
+.finish{
+  display: block;
+}

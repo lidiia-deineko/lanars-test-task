@@ -10,6 +10,7 @@ const ListCards = (props) => {
     useEffect(() => {
         setInterval(() => {
             cards.current.classList.add('hide');
+            cards.current.classList.remove('disable');
         }, 5000);
     }, [])
 
@@ -32,7 +33,7 @@ const ListCards = (props) => {
     })
 
   return(
-    <div className="container" ref={cards}>
+    <div className="container disable" ref={cards}>
         {listCardsRender}
     </div>
   )
