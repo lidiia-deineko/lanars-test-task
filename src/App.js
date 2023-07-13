@@ -1,6 +1,6 @@
 import './App.css';
 import './media.css'
-import {useCallback, useRef, useState } from "react";
+import {useCallback, useEffect, useRef, useState } from "react";
 
 import ListCards from './components/ListCards/ListCards';
 import { checkValues } from './utilities/HelperUtilities';
@@ -51,11 +51,11 @@ function App() {
 
   return (
     <div className="App">
-      <h2 className='title'>Mahjong</h2>
-      <ListCards clickOnCard={clickCard} />
-      <div className='game-end_wrap' ref={finish}>
-        <div className='game-end' >You won!</div>
-      </div>
+        <h2 className='title'>Mahjong</h2>
+        <ListCards clickOnCard={clickCard}/>
+        <div className='game-end_wrap' ref={finish}>
+          <div className='game-end' >You won!</div>
+        </div>
     </div>
   );
 }
